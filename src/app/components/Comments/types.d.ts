@@ -1,0 +1,3 @@
+interface ICommentsFC{
+  comments: IComments[]
+}

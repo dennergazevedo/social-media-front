@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Ubuntu } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+import Header from './components/Header'
+import Head from './head'
+
+const ubuntu = Ubuntu({
+  weight: "400",
+  subsets: ['latin'],
+  preload: true
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +22,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br">
+      <Head />
+      <body className={ubuntu.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

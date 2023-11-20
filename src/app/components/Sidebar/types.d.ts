@@ -1,0 +1,3 @@
+interface ISidebar{
+  profile: IProfile
+}
