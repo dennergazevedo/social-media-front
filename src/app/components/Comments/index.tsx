@@ -16,7 +16,7 @@ const Comments: React.FC<ICommentsFC> = ({ comments }: ICommentsFC) => {
                   { comment.profile.name }
                 </strong>
                 <span className='text-sm text-zinc-500'>
-                  { comment.createdAt }
+                  { comment.createdAt.toLocaleDateString() }
                 </span>
               </div>
             </div>

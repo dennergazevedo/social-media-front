@@ -6,14 +6,16 @@ const ONE_DAY_MS = 86400000;
 
 const Post: React.FC<IPostFC> = ({ post, profile }: IPostFC) => {
 
-  const fullDate = useMemo(() => {
-    const createdAt = new Date(post.createdAt);
-    return `em ${createdAt.getDate()}/${createdAt.getMonth() + 1}`
+  const createdAt = useMemo(() => {
+    return post.createdAt;
   }, [post])
+
+  const fullDate = useMemo(() => {
+    return `em ${createdAt.getDate()}/${createdAt.getMonth() + 1}`
+  }, [createdAt])
 
   const published = useMemo(() => {
     const now = new Date().getTime();
-    const createdAt = new Date(post.createdAt);
     const postTime = createdAt.getTime();
     const hours = (now - postTime) / 3600000;
 
@@ -21,7 +23,7 @@ const Post: React.FC<IPostFC> = ({ post, profile }: IPostFC) => {
     else if(hours > 1) return `há ${Math.floor(hours)}h`;
     else return `há ${hours * 60}min`;
 
-  }, [post, fullDate])
+  }, [fullDate, createdAt])
 
   return (
     <div className='mb-8 bg-zinc-900 rounded-2xl p-8 w-full'>

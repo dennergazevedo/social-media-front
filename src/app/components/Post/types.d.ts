@@ -12,7 +12,7 @@ interface IPost{
 
 interface IComments{
   profile: IProfile
-  createdAt: string
+  createdAt: Date
   text: string
   likes: number
 }

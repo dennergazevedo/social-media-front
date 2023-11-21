@@ -1,8 +1,8 @@
 import Feed from "./components/Feed";
 import Sidebar from "./components/Sidebar";
+import { posts } from "@/app/utils/posts-mock";
 
 import profile from "@/app/utils/profile-mock.json";
-import posts from "@/app/utils/posts-mock.json";
 
 export default function Home() {
   return (
